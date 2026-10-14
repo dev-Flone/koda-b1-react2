@@ -14,22 +14,6 @@ function Contact() {
 
   const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    try {
-      const savedMessages = localStorage.getItem(STORAGE_KEY);
-
-      if (savedMessages) {
-        const parsedMessages = JSON.parse(savedMessages);
-
-        if (Array.isArray(parsedMessages)) {
-          setMessages(parsedMessages);
-        }
-      }
-    } catch {
-      console.error("Gagal membaca pesan");
-    }
-  }, []);
-
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((prevForm) => ({
