@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "contactMessages";
+const STORAGE_KEY = "Messages";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -56,7 +56,7 @@ function Contact() {
     );
   }
   return (
-    <section className="py-8 px-2">
+    <section className="p-8 mx-8 rounded-md border border-slate-300">
       <div className="mx-auto max-w-3xl">
         <div className="mb-10">
           <h1 className="mt-3 text-4xl font-bold tracking-tight">Contact Us</h1>
@@ -79,7 +79,7 @@ function Contact() {
               onChange={handleChange}
               placeholder="Enter your name here"
               required
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
             />
           </div>
           <div>
@@ -92,7 +92,7 @@ function Contact() {
               onChange={handleChange}
               placeholder="Enter your username here"
               required
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
             />
           </div>
           <div>
@@ -105,7 +105,7 @@ function Contact() {
               onChange={handleChange}
               placeholder="email@example.com"
               required
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
             />
           </div>
           <div className="flex flex-wrap gap-5">
@@ -117,7 +117,7 @@ function Contact() {
                 checked={form.gender === "Laki-laki"}
                 onChange={handleChange}
                 required
-                className="h-4 w-4 accent-indigo-600"
+                className="h-4 w-4 accent-red-600"
               />
               Laki-laki
             </label>
@@ -129,7 +129,7 @@ function Contact() {
                 value={form.gender === "Perempuan"}
                 onChange={handleChange}
                 required
-                className="h-4 w-4 accent-indigo-600"
+                className="h-4 w-4 accent-red-600"
               />
               Perempuan
             </label>
@@ -144,7 +144,7 @@ function Contact() {
               onChange={handleChange}
               placeholder="Subject"
               required
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              className="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
             />
           </div>
           <div>
@@ -157,12 +157,12 @@ function Contact() {
               onChange={handleChange}
               placeholder="Write your message here"
               required
-              className="w-full resize-y rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              className="w-full resize-y rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white transition hover:bg-indigo-700 cursor-pointer"
+            className="w-full rounded-lg bg-red-600 px-6 py-3 font-semibold text-white transition hover:bg-red-700 cursor-pointer"
           >
             Send Message
           </button>
@@ -174,7 +174,7 @@ function Contact() {
               Submitted Messages
             </h2>
 
-            <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700">
+            <span className="rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-700">
               {messages.length} messages
             </span>
           </div>

@@ -2,23 +2,58 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="sticky">
-      <nav className="flex justify-between bg-indigo-700 items-center text-white rounded-lg font-semibold">
-        <div className="px-3 py-2">Kairn</div>
-        <div className="flex">
-          <NavLink className="px-3 py-2 hover:bg-indigo-900" to={"/"}>
+    <div className="sticky top-0 z-50 px-4 py-4">
+      <nav className="flex flex-wrap items-center justify-between gap-3  px-4 py-3 font-semibold text-white bg-white/40 ">
+        {/* Logo */}
+        <div className="text-xl font-bold tracking-wide">
+          <NavLink to={"/"}>
+            <img src="../../public/images/logo.png" alt="" className="h-15" />
+          </NavLink>
+        </div>
+        {/* Nav Link */}
+        <div className="flex flex-wrap items-center gap-1">
+          <NavLink
+            to={"/"}
+            className={({ isActive }) =>
+              `rounded-md px-3 py-2 transition-colors bg-transparent ${isActive ? " text-red-600 " : "text-black"}`
+            }
+          >
             Home
           </NavLink>
-          <NavLink className="px-3 py-2 hover:bg-indigo-900" to={"/About"}>
+          <NavLink
+            to={"/Menu"}
+            className={({ isActive }) =>
+              `rounded-md px-3 py-2 transition-colors bg-transparent ${isActive ? " text-red-600 " : "text-black"}`
+            }
+          >
+            Menu
+          </NavLink>
+          <NavLink
+            to={"/About"}
+            className={({ isActive }) =>
+              `rounded-md px-3 py-2 transition-colors bg-transparent ${isActive ? " text-red-600 " : "text-black"}`
+            }
+          >
             About
           </NavLink>
-          <NavLink className="px-3 py-2 hover:bg-indigo-900" to={"/Contact"}>
+          <NavLink
+            to={"/Contact"}
+            className={({ isActive }) =>
+              `rounded-md px-3 py-2 transition-colors bg-transparent ${isActive ? " text-red-600 " : "text-black"}`
+            }
+          >
             Contact
           </NavLink>
         </div>
-        <div className="flex gap-1 px-3 py-2">
-          <button>Login</button>
-          <button>Register</button>
+
+        {/* Login & Register button */}
+        <div className="flex items-center gap-2 pr-4">
+          <button className=" text-whiterounded-md px-3 py-2 transition-colors text-black hover:text-red-600">
+            Login
+          </button>
+          <button className=" text-whiterounded-md px-3 py-2 transition-colors text-black hover:text-red-600">
+            Register
+          </button>
         </div>
       </nav>
     </div>

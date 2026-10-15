@@ -1,28 +1,14 @@
-import { useState } from "react";
-
-export default function SearchForm({ onSearch }) {
-  const [query, setQuery] = useState("");
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    onSearch(query.trim());
-  }
-
+function SearchForm({ search, setSearch }) {
   return (
-    <form className="flex justify-end gap-3" onSubmit={handleSubmit}>
+    <form onSubmit={(e) => e.preventDefault()} className="m-4 p-2 flex gap-3">
       <input
-        className="outline-1 rounded-sm px-2 py-1"
         type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Masukkan nama user..."
+        placeholder="Cari menu pizza..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="w-screen rounded-lg border border-slate-300 px-4 py-3 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
       />
-      <button
-        className="bg-gray-500 hover:bg-gray-800 px-2 py-1 rounded-sm text-white"
-        type="submit"
-      >
-        Search
-      </button>
     </form>
   );
 }
+export default SearchForm;
